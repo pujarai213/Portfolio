@@ -1,8 +1,10 @@
 :root {
   --primary: #6f3b07;
+  --secondary: #2c3e50;
   --bg: #faf9f7;
   --accent: #f7cda3;
   --text: #333;
+  --max-width: 1200px;
 }
 
 body {
@@ -17,12 +19,13 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--bg);
+  background: rgba(250, 249, 247, 0.9);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .logo {
@@ -35,7 +38,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-links a {
@@ -46,6 +49,8 @@ body {
 }
 
 .nav-links a:hover { color: var(--accent); }
+
+.nav-links a:focus { outline: 2px solid var(--secondary); outline-offset: 2px; }
 
 .hero {
   min-height: 100vh;
@@ -83,12 +88,14 @@ body {
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover { background: var(--accent); color: var(--primary); }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.btn:focus { outline: 2px solid var(--secondary); outline-offset: 2px; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
 
 .about p { margin-bottom: 1.5rem; }
 
@@ -125,7 +132,12 @@ body {
   border-radius: 6px;
   padding: 1.5rem;
   text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.project article:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
 
 .contact {
   padding: 4rem 2rem;
