@@ -16,7 +16,6 @@ body {
 }
 
 .navbar {
-  position: fixed;
   top: 0;
   width: 100%;
   background: rgba(250, 249, 247, 0.9);
@@ -29,6 +28,7 @@ body {
   transition: box-shadow 0.3s ease;
   animation: navbarSlideIn 0.5s ease-out forwards;
   opacity: 0;
+  position: relative;
 }
 
 .logo {
@@ -57,7 +57,7 @@ body {
   transition: color 0.3s, transform 0.2s;
 }
 
-.nav-links a:hover { color: var(--accent); transform: translateY(-2px); transition: transform 0.2s; }
+.nav-links a:hover { color: var(--accent); transform: translateY(-2px); transition: transform 0.2s; background: var(--accent); color: var(--primary); transition: background 0.3s, color 0.3s, transform 0.2s; }
 
 .nav-links a:focus { outline: 2px solid var(--secondary); outline-offset: 2px; }
 
