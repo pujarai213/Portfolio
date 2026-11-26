@@ -1,218 +1,156 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500&family=Playfair+Display:wght@500&family=Protest+Revolution&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-
 :root {
   --primary: #6f3b07;
-  --bg: #FCFAF8;
+  --bg: #faf9f7;
   --accent: #f7cda3;
+  --text: #333;
 }
 
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-html, body {
+.navbar {
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 100%;
-  font-family: "Comic Neue", sans-serif;
-  background-color: var(--bg);
-  color: var(--primary);
-}
-
-#main {
-  width: 100%;
-  min-height: 100vh;
-}
-
-#home {
-  width: 100%;
-  height: 200vh;
-  background-color: var(--bg);
-}
-
-#home #nav {
+  background: var(--bg);
+  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 5vw;
-  width: 100%;
-  height: 100px;
+  align-items: center;
+  z-index: 100;
 }
 
-#nav a {
-  position: relative;
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--primary);
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 12px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, var(--bg), #e2d5c8);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
   color: var(--primary);
 }
 
-#nav a .line {
-  position: absolute;
-  bottom: 0;
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
   display: inline-block;
-  height: 1px;
-  background-color: var(--primary);
-  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-#nav a:hover .line#line2 { width: 0; }
-#nav a:hover .line#line1 { width: 100%; }
-
-#page1 {
-  margin-top: 135px;
-}
-
-#page1 h1 {
-  text-align: center;
-  font-size: 7rem;
-  color: var(--primary);
-}
-
-.iam {
-  margin-left: -82px;
-}
-
-.name {
-  margin-left: -82px;
-  font-family: "Protest Revolution", sans-serif;
-}
-
-#page1 span {
-  position: absolute;
-  left: 56%;
-  top: 53%;
-}
-
-.up {
-  margin-top: 30px;
-}
-
-.circle {
-  width: 300px;
-  height: 800px;
-  background-color: #f7cda3c2;
-  border-top-left-radius: 50%;
-  position: absolute;
-  top: 40%;
-  left: 80%;
-}
-
-.linee1 {
-  width: 10px;
-  height: 610px;
-  background-color: var(--primary);
-  position: absolute;
-  top: 15%;
-  left: 5%;
-}
-
-.linee2 {
-  width: 10px;
-  height: 610px;
-  background-color: var(--primary);
-  position: absolute;
-  top: 15%;
-  left: 8%;
-}
-
-.linee3 {
-  width: 1135px;
-  height: 10px;
-  background-color: var(--primary);
-  position: absolute;
-  top: 95%;
-  left: 5%;
-}
-
-.ab {
-  margin-top: 320px;
-  margin-left: 80px;
-  font-size: 4rem;
-  font-family: "Protest Revolution", sans-serif;
-  color: var(--primary);
-}
-
-.about {
-  width: 480px;
-  height: 340px;
-  margin-top: 30px;
-  margin-left: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 100px;
-  font-size: 1.8rem;
-  background-color: var(--accent);
-  color: var(--primary);
-  text-transform: uppercase;
-}
-
-.con {
-  margin-left: 1150px;
-  margin-top: -350px;
-  font-size: 4rem;
-  font-family: "Protest Revolution", sans-serif;
-  color: var(--primary);
-}
-
-.right {
-  margin-left: 1150px;
-  margin-top: 20px;
-  width: 300px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 100px;
-  background-color: var(--accent);
-}
-
-img {
-  width: 30px;
-}
-
-.contact-info-container a {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
   text-decoration: none;
-  color: #000;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover { background: var(--accent); color: var(--primary); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+.about p { margin-bottom: 1.5rem; }
+
+.skills {
+  list-style: none;
   display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.icon {
-  margin-top: 15px;
-}
-
-footer p {
-  margin-top: 35px;
-  text-align: center;
+.skills li {
+  background: var(--accent);
   color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
 
-/* Responsive adjustments for tablets and mobile */
-@media (max-width: 768px) {
-  #nav a {
-    font-size: 10px;
-  }
-  #nav a .line { height: 0.5px; }
-  #page1 h1 { font-size: 4rem; }
-  .iam, .name { margin-left: 0; }
-  #page1 span { left: 50%; top: 50%; transform: translate(-50%, -50%); }
-  .circle { width: 200px; height: 500px; left: 50%; top: 30%; transform: translateX(-50%); }
-  .linee1, .linee2 { display: none; }
-  .linee3 { width: 100%; left: 0; }
-  .about { width: 100%; margin-left: 0; margin-top: 20px; border-radius: 0; font-size: 1.5rem; }
-  .con { margin-left: 0; margin-top: 20px; font-size: 2rem; }
-  .right { margin-left: 0; width: 100%; height: auto; border-radius: 0; }
-  footer p { font-size: 0.9rem; }
+.projects {
+  padding: 4rem 2rem;
+  background: #fff;
 }
 
-@media (max-width: 480px) {
-  #nav a { font-size: 8px; }
-  #page1 h1 { font-size: 3rem; }
-  .about { font-size: 1.3rem; }
-  .con { font-size: 1.8rem; }
-  footer p { font-size: 0.8rem; }
+.projects h2 { text-align: center; margin-bottom: 2rem; }
+
+.projects .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.project article {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact {
+  padding: 4rem 2rem;
+  background: var(--bg);
+  text-align: center;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.contact li { margin: 0.5rem 0; }
+
+.contact a { color: var(--primary); text-decoration: none; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .navbar { padding: 1rem; }
+  .hero h1 { font-size: 2rem; }
 }
