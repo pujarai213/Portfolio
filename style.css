@@ -26,6 +26,9 @@ body {
   align-items: center;
   z-index: 100;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+  animation: navbarSlideIn 0.5s ease-out forwards;
+  opacity: 0;
 }
 
 .logo {
@@ -48,9 +51,14 @@ body {
   transition: color 0.3s;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { color: var(--accent); transform: translateY(-2px); transition: transform 0.2s; }
 
 .nav-links a:focus { outline: 2px solid var(--secondary); outline-offset: 2px; }
+
+@keyframes navbarSlideIn {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
 
 .hero {
   min-height: 100vh;
@@ -165,4 +173,3 @@ footer {
 @media (max-width: 600px) {
   .navbar { padding: 1rem; }
   .hero h1 { font-size: 2rem; }
-}
